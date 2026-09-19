@@ -83,7 +83,7 @@ h1 {
 
 .metrics {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   margin-bottom: 18px;
 }
@@ -249,6 +249,307 @@ textarea {
   text-align: center;
   color: #69758c;
   padding: 32px 12px;
+}
+
+/* ---------- 发运闭环扩展样式 ---------- */
+
+button.small { padding: 6px 10px; font-size: 13px; }
+button.link {
+  background: none;
+  color: #176b87;
+  padding: 4px 0;
+  text-decoration: underline;
+}
+
+.topbar-side {
+  display: grid;
+  gap: 10px;
+  justify-items: end;
+}
+
+.side {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filters select {
+  width: auto;
+}
+
+/* 拦截提示 */
+.blocked-panel {
+  margin-bottom: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.blocked-latest, .blocked-item {
+  border: 1px solid #f0c4b3;
+  border-left: 5px solid #c84b31;
+  background: #fdf3ef;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.blocked-item { background: #fbf7f5; }
+
+.blocked-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: #8f2f1b;
+}
+
+.blocked-time {
+  color: #a2543f;
+  font-size: 13px;
+  margin-right: auto;
+}
+
+.blocked-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 6px 14px;
+  margin: 10px 0;
+  color: #5b4a44;
+  font-size: 14px;
+}
+
+.blocked-triggers {
+  margin: 0;
+  padding-left: 20px;
+  color: #8f2f1b;
+  font-size: 14px;
+  display: grid;
+  gap: 4px;
+}
+
+.blocked-history-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* 资源看板 */
+.resource-board h3 {
+  margin: 14px 0 8px;
+  font-size: 15px;
+  color: #445069;
+}
+
+.resource-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.resource-list li {
+  border: 1px solid #e3eaf3;
+  border-radius: 8px;
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+  background: #fbfcfe;
+}
+
+.resource-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: #536078;
+  font-size: 13px;
+}
+
+.resource-main b { color: #172033; font-size: 14px; }
+
+.resource-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.chip-ok { background: #e8f4ef; color: #14724f; }
+.chip-bad { background: #fbe4de; color: #a3321d; }
+.chip-busy { background: #fff3d6; color: #8a5a00; }
+.chip-free { background: #e8eef5; color: #445069; }
+
+/* 创建表单 */
+.fuel-lines {
+  border: 1px dashed #cfd8e5;
+  border-radius: 8px;
+  padding: 10px 12px 12px;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.fuel-lines legend {
+  color: #445069;
+  font-size: 13px;
+  padding: 0 4px;
+}
+
+.fuel-line {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 8px;
+}
+
+.fuel-line-extra {
+  display: grid;
+  gap: 8px;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.checkbox input { width: auto; }
+
+.hint { margin: 0; color: #8a5a00; font-size: 13px; }
+.form-error { margin: 0; color: #a3321d; font-size: 13px; }
+.form-ok { margin: 0; color: #14724f; font-size: 13px; }
+
+/* 配送单卡片 */
+.status-待装油 { background: #e8eef5; color: #445069; }
+.status-已装油 { background: #fff3d6; color: #8a5a00; }
+.status-运输中 { background: #e3ecfb; color: #1d4fa1; }
+.status-已到站 { background: #e8f4ef; color: #14724f; }
+
+.locked-tag {
+  grid-column: 1 / -1;
+  color: #8a5a00;
+  font-size: 13px;
+}
+
+.slot-change {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* 到站确认 */
+.arrival-form {
+  border: 1px solid #dfe7f1;
+  border-radius: 8px;
+  background: #f4f8fc;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.arrival-line { display: grid; gap: 8px; }
+
+.arrival-row {
+  display: grid;
+  grid-template-columns: 1fr 120px auto;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  color: #445069;
+}
+
+.diff-badge {
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #e8f4ef;
+  color: #14724f;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.diff-over, .diff-badge.diff-over {
+  background: #fbe4de;
+  color: #a3321d;
+  font-weight: 700;
+}
+
+.reason-input { border-color: #c84b31; }
+
+/* 回单 */
+.receipt {
+  border: 1px solid #d8e6de;
+  border-radius: 8px;
+  background: #f4faf7;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.receipt-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: #14724f;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.receipt table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  color: #37455c;
+}
+
+.receipt th, .receipt td {
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid #dcebe2;
+}
+
+.receipt th { color: #5f7a6d; font-weight: 600; }
+
+/* 修订链 */
+.revision-chain {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0 0 0 14px;
+  border-left: 2px solid #d9e2ee;
+  display: grid;
+  gap: 10px;
+}
+
+.revision-chain li {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.revision-chain p { margin: 0; color: #37455c; font-size: 13px; }
+.revision-chain time { color: #8b96a9; font-size: 12px; }
+
+.rev-type {
+  border-radius: 999px;
+  background: #e8eef5;
+  color: #445069;
+  font-size: 12px;
+  padding: 3px 8px;
+  text-align: center;
 }
 
 @media (max-width: 860px) {
